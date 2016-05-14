@@ -1,0 +1,10 @@
+{% extends "cms_put/basesite.html" %}
+
+{% block title %}Nuevo recurso agregado{% endblock %}
+
+{% block content %}
+    {% csrf_token %}
+    {% if recurso %}
+        <p>Nombre: {{recurso.nombre}} - {{ recurso.recurso }}</p>
+    {% endif %}
+{% endblock %}
