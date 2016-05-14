@@ -11,11 +11,12 @@ def index(request):
     }
     return render(request, template, context)
 
+
 @csrf_exempt
 def recurso(request, nombre):
     if request.method == "GET":
         # Obtengo la entrada agregada al diccionario o devuelvo un error
-        recurso = get_object_or_404(Pages, nombre=nombre);
+        recurso = get_object_or_404(Pages, nombre=nombre)
         template = 'cms_put/recurso.html'
         context = {
             'recurso': recurso
